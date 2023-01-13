@@ -20,6 +20,7 @@ Aplicação para Teste de Desenvolvimento.
 * React JS
 * Bootstrap
 * HTML e CSS
+* Repositório: https://github.com/MuriloTi/backoffice-react
 
 ### Database
 * SQL Server
