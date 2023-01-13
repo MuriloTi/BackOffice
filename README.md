@@ -15,6 +15,7 @@ Aplicação para Teste de Desenvolvimento.
 * API Rest
 * Padrão Repositories
 * Arquitetura Limpa
+* EntityFramework Core
 
 ### Front-End
 * React JS
