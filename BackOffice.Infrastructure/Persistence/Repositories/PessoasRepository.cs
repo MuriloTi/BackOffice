@@ -66,6 +66,7 @@ namespace BackOffice.Infrastructure.Persistence.Repositories
         {
             var pessoa = await _backOfficeDbContext.Pessoas
                 .Include(p => p.Enderecos)
+                .Include(p => p.Departamentos)
                 .SingleOrDefaultAsync(p => p.Id == id);
             if (pessoa != null)
             {
@@ -90,7 +91,16 @@ namespace BackOffice.Infrastructure.Persistence.Repositories
                     enderecosDTO.Add(enderecoDTO);
                 }
             }
-            return new PessoaDTO(pessoa.Id, pessoa.Tipo, pessoa.Nome, pessoa.Apelido, pessoa.CPF, pessoa.CNPJ, pessoa.Cliente, pessoa.Fornecedor, pessoa.Colaborador, pessoa.DataCriacao, pessoa.DataUltimaAlteracao, enderecosDTO, null);
+            var departamentosDTO = new List<DepartamentoDTO>();
+            if (pessoa.Departamentos != null)
+            {
+                foreach (var departamento in pessoa.Departamentos)
+                {
+                    var departamentoDTO = new DepartamentoDTO(departamento.Id, departamento.Titulo, departamento.ResponsavelId, departamento.DataCriacao, departamento.DataUltimaAlteracao, pessoa.Nome);
+                    departamentosDTO.Add(departamentoDTO);
+                }
+            }
+            return new PessoaDTO(pessoa.Id, pessoa.Tipo, pessoa.Nome, pessoa.Apelido, pessoa.CPF, pessoa.CNPJ, pessoa.Cliente, pessoa.Fornecedor, pessoa.Colaborador, pessoa.DataCriacao, pessoa.DataUltimaAlteracao, enderecosDTO, departamentosDTO);
         }
     }
 }

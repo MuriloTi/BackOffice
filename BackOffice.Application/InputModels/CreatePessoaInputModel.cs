@@ -15,10 +15,10 @@ namespace BackOffice.Application.InputModels
         [Required(ErrorMessage = "Informe um Apelido/Nome Fantasia")]
         public string Apelido { get; set; }
 
-        [CPFValidator(ErrorMessage = "Invalid CPF. CPF must have 11 only numbers exacly")]
+        [CPFValidator(ErrorMessage = "CPF Inválido")]
         public string? CPF { get; set; }
 
-        [CNPJValidator(ErrorMessage = "Invalid CNPJ. CNPJ must have 14 only numbers exacly")]
+        [CNPJValidator(ErrorMessage = "CNPJ Inválido")]
         public string? CNPJ { get; set; }
 
         public bool Cliente { get; set; }
