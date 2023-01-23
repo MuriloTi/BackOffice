@@ -17,11 +17,15 @@ Aplicação para Teste de Desenvolvimento.
 * Arquitetura Limpa
 * EntityFramework Core
 
-### Front-End
-* React JS
+### Front-End em React
 * Bootstrap
 * HTML e CSS
 * Repositório: https://github.com/MuriloTi/backoffice-react
+
+### Front-End em Angular
+* Bootstrap
+* HTML e CSS
+* Repositório: https://github.com/MuriloTi/backoffice-angular
 
 ### Database
 * SQL Server
